@@ -1,0 +1,32 @@
+[
+  {
+    "testName": "Simple Math test 01",
+    "category": "Math",
+    "description": "In a basic arithmetic test you are required to solve simple mathematical equations and answer questions regarding basic mathematics.",
+    "questions": [0, 1, 2]
+},
+{
+    "testName": "Simple Math test 02",
+    "category": "Math",
+    "description": "In a basic arithmetic test you are required to solve simple mathematical equations and answer questions regarding basic mathematics.",
+    "questions": [1, 2, 3, 4]
+},
+{
+    "testName": "Simple Math test 03",
+    "category": "Math",
+    "description": "In a basic arithmetic test you are required to solve simple mathematical equations and answer questions regarding basic mathematics.",
+    "questions": [2, 3, 4]
+},
+{
+    "testName": "Simple Math test 04",
+    "category": "Math",
+    "description": "In a basic arithmetic test you are required to solve simple mathematical equations and answer questions regarding basic mathematics.",
+    "questions": [1, 2, 4, 5]
+},
+{
+    "testName": "Simple Math test 05",
+    "category": "Math",
+    "description": "In a basic arithmetic test you are required to solve simple mathematical equations and answer questions regarding basic mathematics.",
+    "questions": [0, 4, 5]
+  }
+]

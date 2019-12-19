@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Quiz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Quiz Category
+                </a>
+                <div class="dropdown-menu">
+                    <% for(let i=0; i < category.length; i++ ) { %>
+                    <a class="dropdown-item"
+                        href="/category/category?name=<%= category[i].title %>"><%= category[i].title %></a>
+                    <% } %>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mr-5">
+                <span class="navbar-text">
+                    Welcome <%= user.firstname %> <%= user.lastname %>
+                </span>
+            </li>
+            <li class="nav-item dropdown mar-right-dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/user/finishtest">Finished Test</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/user/logout">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="main">
+    <div class="container">
+
+        <%- include('./../messages/messages') %>
+
+        <div class="row">
+            <% for(let i=0; i < testList.length; i++ ) { %>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= testList[i].testName %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= testList[i].category %></h6>
+                        <p class="card-text">
+                            <%= testList[i].description %>
+                        </p>
+                        <a href="/test/<%= testList[i]._id %> " class="card-link float-right">Open</a>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+
+        <% if(typeof completeTestList != 'undefined'){ %>
+        <h1>Finishtest</h1>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped table-inverse table-responsive">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>Test Name</th>
+                            <th>Total Score</th>
+                            <th>Obtain Score</th>
+                            <th>Completed Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let i=0; i < completeTestList.length; i++ ) { %>
+                        <tr>
+                            <td><%= completeTestList[i].testName %></td>
+                            <td><%= completeTestList[i].totalScore %></td>
+                            <td><%= completeTestList[i].score %></td>
+                            <td><%= completeTestList[i].completedDate %></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <% } %>
+
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="blog-footer">
+    <p>Quiz Application Using <span class="badge badge-primary">Node.js and MongoDB</span></p>
+    <p>Developed By <code class="highlighter-rouge">KRUNAL PATEL</code></p>
+    <p>To check my work browse my <a href="https://krunal273.netlify.com/">Portfolio</a></p>
+</footer>
+<!-- Footer -->

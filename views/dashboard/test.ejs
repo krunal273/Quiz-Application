@@ -1,0 +1,95 @@
+<div class="container">
+    <div id="startTest">
+        <div class="card">
+            <div class="card-body">
+                <h1><%= test.testName %></h1>
+                <h5><%= test.description %></h5>
+                <button type="button" id="startTestButton" data-id="<%= test._id %>"
+                    class="btn btn-outline-secondary btn-block">Let's Start</button>
+                <a class="btn btn-outline-dark btn-block" id="quit" href="/dashboard" role="button">Go Back</a>
+            </div>
+        </div>
+    </div>
+    <div id="quizMain">
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                <div class="float-left">
+                    <h1 id="testName">Simple Math test 01</h1>
+                </div>
+                <div class="float-right">
+                    <ul>
+                        <li>
+                            <span class="badge badge-info">Score</span>
+                            <span class="badge badge-primary badge-pill" id="score">0</span>
+                        </li>
+                        <li>
+                            <span class="badge badge-info">Time Left</span>
+                            <span class="badge badge-primary badge-pill" id="timer">0</span>
+                        </li>
+                        <li>
+                            <span class="badge badge-info">Question Left</span>
+                            <span class="badge badge-primary badge-pill" id="question-left">0</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">
+                    <span id="question-title">What is 1+1?</span>
+                </h2>
+
+                <div id="options">
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1" id="label1">
+                            2
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                <div class="float-left">
+                    <button class="btn btn-outline-primary" id="submit-btn">Submit Answer</button>
+                    <button class="btn btn-outline-primary d-none" id="next-btn">Next Question</button>
+                    <button class="btn btn-outline-primary d-none" id="finish-btn">Finish</button>
+                </div>
+                <div class="float-right">
+                    <button class="btn btn-outline-warning" id="quit-btn" data-toggle="modal"
+                        data-target="#quitModel">Quit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="quitModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Do You Want to Quit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-paragraph-message"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="quit-no-btn" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" id="quit-yes-btn">yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="alertArea">
+    <div class="alert fade show d-none" id="alertTest" role="alert">
+        <P></P>
+    </div>
+</div>
