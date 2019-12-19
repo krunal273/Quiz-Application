@@ -1,0 +1,82 @@
+.container-fluid {
+  padding: 0;
+}
+
+
+/* main */
+.main {
+  margin-top: 20px;
+}
+
+.main .card {
+  margin-top: 25px;
+}
+
+/* testCard */
+.testCard {
+  margin-top: 100px;
+}
+
+/* start */
+#startTest {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+#startTest button {
+  margin-top: 50px;
+}
+
+/* quizMain */
+#quizMain {
+  margin-top: 50px;
+  display: none;
+}
+
+/* mar-right-dropdown */
+.mar-right-dropdown {
+  margin-right: 150px;
+}
+
+/* processing  */
+#processing {
+  color: #000;
+  display: none;
+  text-align: center;
+  font-size: 2em;
+  position: fixed;
+  top: 50px;
+  left: -webkit-calc(50% - 54px);
+  left: -moz-calc(50% - 54px);
+  left: calc(50% - 54px);
+  z-index: 1111;
+}
+
+/* alertTest */
+#alertTest {
+  position: fixed;
+  top: 50px;
+  left: -webkit-calc(50%);
+  left: -moz-calc(50%);
+  left: calc(50%);
+  z-index: 1111;
+  transform: translate(-50%, -50%);
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* footer */
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .05rem solid #e5e5e5;
+  margin-top: 50px;
+}
+
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
