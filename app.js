@@ -71,21 +71,28 @@ app.use(function(req, res, next) {
 //   next();
 // });
 
-// const catogory = JSON.parse(
-//   fs.readFileSync(path.join(__dirname, 'data/testSet.json'), 'utf-8')
-// );
-// console.log(catogory);
+// if (process.env.NODE_ENV === 'development') {
+//   const category = JSON.parse(
+//     fs.readFileSync(path.join(__dirname, 'data/category.json'), 'utf-8')
+//   );
+//   const testSet = JSON.parse(
+//     fs.readFileSync(path.join(__dirname, 'data/testSet.json'), 'utf-8')
+//   );
 
-// const importData = async () => {
-//   try {
-//     await Testset.create(catogory);
-//     console.log('Done');
-//   } catch (err) {
-//     console.log('err', err);
-//   }
-// };
+//   console.log(category);
+//   console.log(testSet);
 
-// importData();
+//   const importData = async () => {
+//     try {
+//       await Category.create(category);
+//       await Testset.create(testSet);
+//       console.log('Data is imported to database please check it');
+//     } catch (err) {
+//       console.log('err', err);
+//     }
+//   };
+//   importData();
+// }
 
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));

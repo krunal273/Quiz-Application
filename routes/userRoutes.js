@@ -23,7 +23,7 @@ router.post(
   authController.login,
   passport.authenticate('local', {
     successRedirect: '/dashboard',
-    failureRedirect: '/users/login',
+    failureRedirect: '/user/login',
     failureFlash: true
   })
 );
