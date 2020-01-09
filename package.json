@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon server.js",
+    "start:import": "set NODE_ENV=import & set IMPORT_DATA=1234 & nodemon server.js",
     "start:prod": "set NODE_ENV=production & nodemon server.js"
   },
   "author": "Krunal Patel",

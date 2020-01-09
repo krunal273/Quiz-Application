@@ -1,5 +1,5 @@
 const path = require('path');
-// const fs = require('fs');
+const fs = require('fs');
 const morgan = require('morgan');
 const express = require('express');
 const bodyParse = require('body-parser');
@@ -71,28 +71,31 @@ app.use(function(req, res, next) {
 //   next();
 // });
 
-// if (process.env.NODE_ENV === 'development') {
-//   const category = JSON.parse(
-//     fs.readFileSync(path.join(__dirname, 'data/category.json'), 'utf-8')
-//   );
-//   const testSet = JSON.parse(
-//     fs.readFileSync(path.join(__dirname, 'data/testSet.json'), 'utf-8')
-//   );
+if (
+  process.env.NODE_ENV.trim() === 'import' &&
+  process.env.IMPORT_DATA.trim() === '1234'
+) {
+  const category = JSON.parse(
+    fs.readFileSync(path.join(__dirname, 'data/category.json'), 'utf-8')
+  );
+  const testSet = JSON.parse(
+    fs.readFileSync(path.join(__dirname, 'data/testSet.json'), 'utf-8')
+  );
 
-//   console.log(category);
-//   console.log(testSet);
+  // console.log(category);
+  // console.log(testSet);
 
-//   const importData = async () => {
-//     try {
-//       await Category.create(category);
-//       await Testset.create(testSet);
-//       console.log('Data is imported to database please check it');
-//     } catch (err) {
-//       console.log('err', err);
-//     }
-//   };
-//   importData();
-// }
+  const importData = async () => {
+    try {
+      await Category.create(category);
+      await Testset.create(testSet);
+      console.log('Data is imported to database please check it');
+    } catch (err) {
+      console.log('err', err);
+    }
+  };
+  importData();
+}
 
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
